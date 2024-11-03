@@ -12,7 +12,7 @@ export default {
     daisyui,
   ],
   daisyui: {
-    themes: ["pastel",],
+    themes: ["light",],
   },
 
 }

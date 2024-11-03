@@ -1,6 +1,6 @@
 const Statistics = () => {
     return (
-        <div>
+        <div className="bgPink">
             <h1>Statistics section</h1>
         </div>
     );

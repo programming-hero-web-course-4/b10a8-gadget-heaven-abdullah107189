@@ -3,9 +3,9 @@ import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 const Main = () => {
     return (
-        <div className=" ">
+        <div className="sora-font">
             <Navbar></Navbar>
-            <div className="max-w-[1440px] mx-auto border">
+            <div className="max-w-[1440px] mx-auto">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
