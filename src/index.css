@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .pink {
+    color: #9538E2;
+  }
+
+  .bgPink {
+    background-color: #9538E2;
+  }
+}
