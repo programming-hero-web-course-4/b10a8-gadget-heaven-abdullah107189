@@ -17,9 +17,9 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/dashboard'}>Dashboard</NavLink>
         </div>
     return (
-        <div className={`${nowLocation === '/' ? ' mt-5' : 'bg-white'}`}>
+        <div className={`${nowLocation === '/' ? '' : 'bg-white'}`}>
             {/* <div className="mt-5"> */}
-            < div className={`${nowLocation === '/' ? 'bgPink text-white rounded-t-2xl' : 'bg-white'} py-5 px-2 navbar bg-base-100 max-w-[1440px] mx-auto`} >
+            < div className={`${nowLocation === '/' ? ' bgPink text-white rounded-t-2xl' : 'bg-white'} py-5 px-2 navbar bg-base-100 max-w-[1440px] mx-auto`} >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
