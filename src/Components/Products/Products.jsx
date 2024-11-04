@@ -8,12 +8,12 @@ const Products = () => {
             <div className="grid md:grid-cols-5 gap-3 ">
                 {/* left side  */}
                 <div className=" md:col-span-1 ">
-                    <div className="shadow-lg border rounded-xl p-3 flex flex-col gap-3 sticky top-20 z-10">
-                        <NavLink to={`/allProducts`} className={({ isActive }) => `${isActive ? 'bgPink hover:bgPink hover:text-white text-white' : 'hover:pinkOutletBtn'} p-3 btn rounded-full w-full flex justify-start pl-10`}>All</NavLink>
+                    <div className="shadow-lg border rounded-xl p-3 flex flex-col gap-3 sticky top-24 z-10">
+                        <NavLink to={`/#allProducts`} className={({ isActive }) => `${isActive ? 'bgPink hover:bgPink hover:text-white text-white' : 'hover:pinkOutletBtn'} p-3 btn rounded-full w-full flex justify-start pl-10`}>All</NavLink>
                         {
                             categoriesData.map(category =>
                                 <NavLink
-                                    to={`/products/${category.category_name}`}
+                                    to={`/products/${category.category_name}#allProducts`}
                                     className={({ isActive }) => `${isActive ? 'bgPink hover:bgPink hover:text-white text-white' : 'hover:pinkOutletBtn'} p-3 btn rounded-full w-full flex justify-start pl-10`}
                                     key={category.category_id}
                                 >

@@ -3,9 +3,9 @@ import { useLoaderData, useParams } from "react-router-dom";
 import SingleProductCard from "../SIngleProductCard/SingleProductCard";
 
 const AllProductsByCategory = () => {
-    const [allData, setAllData] = useState([])
-    const { category } = useParams()
     const loadAllProducts = useLoaderData()
+    const [allData, setAllData] = useState(loadAllProducts || [])
+    const { category } = useParams()
     useEffect(() => {
         if (category) {
             const filterData = [...loadAllProducts].filter(items => items.category === category)
@@ -15,7 +15,6 @@ const AllProductsByCategory = () => {
             setAllData(loadAllProducts)
         }
     }, [loadAllProducts, category])
-    console.log(allData);
     return (
         <div>
             <div className="grid grid-cols-3 gap-3">
