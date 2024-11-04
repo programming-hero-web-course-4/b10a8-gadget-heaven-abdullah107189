@@ -12,7 +12,9 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Products from './Components/Products/Products';
 import AllProductsByCategory from './Components/AllProductsByCategory/AllProductsByCategory';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
-import ProductsDetails from './Components/ProductsDetails/ProductsDetails';
+import ProductsDetails from './Pages/ProductsDetails/ProductsDetails';
+import { CartProvider } from './Provider/CartContext';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +46,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'statistics',
-        element: <Statistics></Statistics>
+        element: <Statistics></Statistics>,
+        loader: () => fetch('/products.json'),
       },
       {
         path: 'dashboard',
@@ -61,6 +64,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </CartProvider>
   </StrictMode>,
 )

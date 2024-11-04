@@ -1,14 +1,16 @@
 import { PiHeartStraightThin, PiShoppingCartThin } from "react-icons/pi";
 import { NavLink, useLocation } from "react-router-dom";
 import './Navbar.css'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../../Provider/CartContext";
 const Navbar = () => {
     const [nowLocation, setNowLocation] = useState('/')
     const location = useLocation()
     useEffect(() => {
         setNowLocation(location.pathname)
     }, [location.pathname])
-
+    const { cartItems, wishlistItems } = useContext(CartContext)
+    console.log(cartItems.length, wishlistItems.length);
     // nav bar category 
     const li =
         <div className="flex gap-10">
@@ -17,7 +19,7 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/dashboard'}>Dashboard</NavLink>
         </div>
     return (
-        <div className={`${nowLocation === '/' ? '' : 'bg-white'}`}>
+        <div className={`${nowLocation === '/' ? '' : 'bg-white'} sticky top-0 z-30`}>
             {/* <div className="mt-5"> */}
             < div className={`${nowLocation === '/' ? ' bgPink text-white rounded-t-2xl' : 'bg-white'} py-5 px-2 navbar bg-base-100 max-w-[1440px] mx-auto`} >
                 <div className="navbar-start">
@@ -54,13 +56,13 @@ const Navbar = () => {
                         <button className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiShoppingCartThin className="w-full h-full z-20"></PiShoppingCartThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white pink border' : 'border'} rounded-full`}>
-                                <span className=" font-semibold p-1">10</span>
+                                <span className=" font-semibold p-1">{cartItems.length}</span>
                             </div>
                         </button>
                         <button className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiHeartStraightThin className="w-full h-full"></PiHeartStraightThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white  pink border' : 'border'} rounded-full`}>
-                                <span className=" font-semibold p-1">10</span>
+                                <span className=" font-semibold p-1">{wishlistItems.length}</span>
                             </div>
                         </button>
                     </div>

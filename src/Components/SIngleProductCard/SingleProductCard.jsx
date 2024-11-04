@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 const SingleProductCard = ({ items }) => {
     const { product_id, product_title, price, product_image, } = items;
+
+
     return (
         <div className="p-2 border rounded-2xl flex flex-col shadow-md hover:shadow-xl">
             <div className="w-full p-4 h-[300px] mb-3 mx-auto ">

@@ -4,7 +4,7 @@ const Products = () => {
     const categoriesData = useLoaderData()
     return (
         <div className="relative -top-[200px] pt-4" id="allProducts">
-            <h1 className="text-4xl font-bold text-center mb-12 sticky top-0 py-3 z-10 bg-white">Explore Cutting-Edge Gadgets</h1>
+            <h1 className="text-4xl font-bold text-center mb-12 sticky top-[75px] py-3 z-10 bg-white">Explore Cutting-Edge Gadgets</h1>
             <div className="grid md:grid-cols-5 gap-3 ">
                 {/* left side  */}
                 <div className=" md:col-span-1 ">

@@ -3,6 +3,9 @@ import UseBanner from "../../Hooks/useBanner";
 import { PiHeartStraightThin, PiShoppingCartThin } from "react-icons/pi";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { useContext, } from "react";
+import { CartContext } from "../../Provider/CartContext";
+import Swal from "sweetalert2";
 
 const ProductsDetails = () => {
     const { id } = useParams()
@@ -10,9 +13,46 @@ const ProductsDetails = () => {
     const findData = datas.find(data => data.product_id === id)
     const { product_title, product_image, price, description, specification, availability, rating } = findData;
     const navigate = useNavigate()
+
+    // add to cart and wishlist function
+    const { addToCart, addToWishlist, cartItems, wishlistItems } = useContext(CartContext);
+    const handleAddToCart = (product) => {
+        const checkCart = cartItems.includes(product)
+        if (checkCart === true) {
+            return Swal.fire({
+                title: "Already added !",
+                text: "Already added this product to Cart section!",
+                icon: "warning"
+            });
+        }
+        addToCart(product)
+        Swal.fire({
+            title: "Good job!",
+            text: "Your cart added Cart Section!",
+            icon: "success"
+        });
+    }
+    const handleAddToWishlist = (product) => {
+        const checkWishlist = wishlistItems.includes(product)
+        if (checkWishlist === true) {
+            return Swal.fire({
+                title: "Already added !",
+                text: "Already added this product to Wishlist section!",
+                icon: "warning"
+            });
+        }
+        addToWishlist(product)
+
+        Swal.fire({
+            title: "Good job!",
+            text: "Your cart added Wishlist Section!",
+            icon: "success"
+        });
+    }
+
     return (
         <div className="relative">
-         
+
             <div>
                 <UseBanner
                     title="All Products"
@@ -52,11 +92,15 @@ const ProductsDetails = () => {
                                 <p className="px-3 py-1 rounded-full bg-gray-200 ">{rating}</p>
                             </div>
                             <div className="flex gap-4 mt-4">
-                                <button className="pinkOutletBtn !bgPink !text-white flex items-center gap-3">
+                                <button
+                                    onClick={() => handleAddToCart(findData)}
+                                    className="pinkOutletBtn !bgPink !text-white flex items-center gap-3">
                                     Add To Card
                                     < PiShoppingCartThin></PiShoppingCartThin>
                                 </button>
-                                <button className="p-4 shadow-lg border border-[#9538E2] rounded-full text-black flex items-center gap-3">
+                                <button
+                                    onClick={() => handleAddToWishlist(findData)}
+                                    className="p-4 shadow-lg border border-[#9538E2] rounded-full text-black flex items-center gap-3">
                                     <PiHeartStraightThin className="w-7 h-7"></PiHeartStraightThin>
                                 </button>
                             </div>
