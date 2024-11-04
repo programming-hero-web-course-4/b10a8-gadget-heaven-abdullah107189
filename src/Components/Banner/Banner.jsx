@@ -6,7 +6,7 @@ const Banner = () => {
                 <div className="w-3/4 mx-auto space-y-6 text-center text-white">
                     <h1 className="text-6xl font-semibold">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                     <p className="w-4/5 mx-auto">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-                    <button className="pinkOutletBtn">Shop Now</button>
+                    <a href="#allProducts"> <button className="pinkOutletBtn mt-5">Shop Now</button></a>
                 </div>
             </div>
             <div className='w-[1062px] h-[563px] mx-auto p-4 rounded-3xl bg-white/20 border-2 border-white relative -top-[280px]'>

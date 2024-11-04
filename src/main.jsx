@@ -9,6 +9,8 @@ import Main from './MainLayout/Main';
 import Home from './Pages/Home/Home';
 import Statistics from './Pages/Statistics/Statistics';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import Products from './Components/Products/Products';
+import AllProductsByCategory from './Components/AllProductsByCategory/AllProductsByCategory';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,7 +19,27 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('/categories.json')
+        children: [
+          {
+            path: '/',
+            loader: () => fetch('/categories.json'),
+            element: <Products></Products>,
+            children: [
+              {
+                path: '/allProducts',
+                loader: () => fetch('/products.json'),
+                element: <AllProductsByCategory></AllProductsByCategory>
+              },
+              {
+                path: '/products/:category',
+                loader: () => fetch('/products.json'),
+                element: <AllProductsByCategory></AllProductsByCategory>
+              },
+            ]
+          },
+
+
+        ]
       },
       {
         path: 'statistics',

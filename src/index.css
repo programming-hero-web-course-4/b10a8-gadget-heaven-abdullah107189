@@ -8,6 +8,11 @@
   font-optical-sizing: auto;
 }
 
+* {
+
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
