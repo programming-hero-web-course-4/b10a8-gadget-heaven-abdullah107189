@@ -1,7 +1,19 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
+import { CartContext } from "../../Provider/CartContext";
+import Swal from "sweetalert2";
 const SingleCartItems = ({ items }) => {
-    const { product_title, product_image, price, specification } = items;
+    const { product_id, product_title, product_image, price, specification } = items;
+    const { deleteCartlistInCart } = useContext(CartContext);
+    const handleDeleteToCartItems = (id) => {
+        deleteCartlistInCart(id)
+        Swal.fire({
+            title: "Deleted!",
+            text: "Your cart deleted to Cart Section!",
+            icon: "success"
+        });
+    }
     return (
         <div className={`${items ? 'flex' : 'hidden'} p-5 shadow-lg mb-4 border rounded-xl flex gap-20`}>
             <div className="w-[400px] h-[200px] shadow-md rounded-xl">
@@ -14,7 +26,7 @@ const SingleCartItems = ({ items }) => {
                     <p className="font-bold">Price : {price} $</p>
                 </div>
                 <div className="">
-                    <button className="">
+                    <button onClick={() => handleDeleteToCartItems(product_id)} className="">
                         <TiDeleteOutline className="w-16 h-16 p-2 text-red-400" />
                     </button>
                 </div>

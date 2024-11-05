@@ -14,9 +14,17 @@ export const CartProvider = ({ children }) => {
         const newCart = [...wishlistItems, product]
         setWishlistItems(newCart)
     }
+    const deleteWishlistCart = (id) => {
+        const filterData = wishlistItems.filter(item => item.product_id !== id)
+        setWishlistItems(filterData);
+    }
 
+    const deleteCartlistInCart = (id) => {
+        const filterData = wishlistItems.filter(item => item.product_id !== id)
+        setCartItems(filterData);
+    }
     return (
-        <CartContext.Provider value={{ cartItems, wishlistItems, addToCart, addToWishlist }}>
+        <CartContext.Provider value={{ cartItems, wishlistItems, addToCart, addToWishlist, deleteWishlistCart, deleteCartlistInCart }}>
             {children}
         </CartContext.Provider>
     );

@@ -34,6 +34,14 @@ const ProductsDetails = () => {
     }
     const handleAddToWishlist = (product) => {
         const checkWishlist = wishlistItems.includes(product)
+        const checkCart = cartItems.includes(product)
+        if (checkCart === true) {
+            return Swal.fire({
+                title: "You added to Cart",
+                text: "Already added this product to Cart!",
+                icon: "error"
+            });
+        }
         if (checkWishlist === true) {
             return Swal.fire({
                 title: "Already added !",
@@ -49,6 +57,7 @@ const ProductsDetails = () => {
             icon: "success"
         });
     }
+ 
 
     return (
         <div className="relative">
