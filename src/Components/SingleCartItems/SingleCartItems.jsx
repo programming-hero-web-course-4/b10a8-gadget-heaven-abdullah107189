@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const SingleCartItems = ({ items }) => {
     const { product_id, product_title, product_image, price, specification } = items;
     const { deleteCartlistInCart } = useContext(CartContext);
+
     const handleDeleteToCartItems = (id) => {
         deleteCartlistInCart(id)
         Swal.fire({

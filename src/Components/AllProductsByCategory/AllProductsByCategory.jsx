@@ -12,7 +12,7 @@ const AllProductsByCategory = () => {
             setAllData(filterData)
         }
         else {
-            setAllData(loadAllProducts)
+            setAllData(loadAllProducts.slice(0, 12))
         }
     }, [loadAllProducts, category])
     return (

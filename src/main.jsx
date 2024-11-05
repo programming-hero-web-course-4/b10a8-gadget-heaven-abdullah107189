@@ -16,6 +16,7 @@ import ProductsDetails from './Pages/ProductsDetails/ProductsDetails';
 import { CartProvider } from './Provider/CartContext';
 import CartSection from './Components/CartSection/CartSection';
 import WishlistSection from './Components/WishlistSection/WishlistSection';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -76,8 +77,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CartProvider>
-      <RouterProvider router={router}></RouterProvider>
-    </CartProvider>
+    <HelmetProvider>
+      <CartProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </CartProvider>
+    </HelmetProvider>
   </StrictMode>,
 )

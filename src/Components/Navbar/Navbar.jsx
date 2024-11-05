@@ -1,5 +1,5 @@
 import { PiHeartStraightThin, PiShoppingCartThin } from "react-icons/pi";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import './Navbar.css'
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../Provider/CartContext";
@@ -52,18 +52,22 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="flex gap-4">
-                        <button className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
+                        <Link
+                            to={ '/dashboard/cart-section'}
+                            className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiShoppingCartThin className="w-full h-full z-20"></PiShoppingCartThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white pink border' : 'border'} rounded-full`}>
                                 <span className=" font-semibold p-1">{cartItems.length}</span>
                             </div>
-                        </button>
-                        <button className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
+                        </Link>
+                        <Link
+                        to={ '/dashboard/wishlist-section'}
+                            className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiHeartStraightThin className="w-full h-full"></PiHeartStraightThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white  pink border' : 'border'} rounded-full`}>
                                 <span className=" font-semibold p-1">{wishlistItems.length}</span>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div >

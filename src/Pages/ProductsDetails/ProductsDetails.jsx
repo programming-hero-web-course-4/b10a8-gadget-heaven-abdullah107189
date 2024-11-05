@@ -3,9 +3,10 @@ import UseBanner from "../../Hooks/useBanner";
 import { PiHeartStraightThin, PiShoppingCartThin } from "react-icons/pi";
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { useContext, } from "react";
+import { useContext, useState, } from "react";
 import { CartContext } from "../../Provider/CartContext";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const ProductsDetails = () => {
     const { id } = useParams()
@@ -15,52 +16,69 @@ const ProductsDetails = () => {
     const navigate = useNavigate()
 
     // add to cart and wishlist function
-    const { addToCart, addToWishlist, cartItems, wishlistItems } = useContext(CartContext);
+    const { addToCart, addToWishlist, cartItems, wishlistItems, deleteWishlistCart } = useContext(CartContext);
+
     const handleAddToCart = (product) => {
-        const checkCart = cartItems.includes(product)
-        if (checkCart === true) {
+        const checkCart = cartItems.find(item => item.product_id === product.product_id)
+        if (checkCart) {
             return Swal.fire({
                 title: "Already added !",
                 text: "Already added this product to Cart section!",
                 icon: "warning"
             });
         }
-        addToCart(product)
-        Swal.fire({
-            title: "Good job!",
-            text: "Your cart added Cart Section!",
-            icon: "success"
-        });
-    }
-    const handleAddToWishlist = (product) => {
-        const checkWishlist = wishlistItems.includes(product)
-        const checkCart = cartItems.includes(product)
-        if (checkCart === true) {
-            return Swal.fire({
-                title: "You added to Cart",
-                text: "Already added this product to Cart!",
-                icon: "error"
+        else {
+            addToCart(product)
+            deleteWishlistCart(product.product_id)
+            Swal.fire({
+                title: "Good job!",
+                text: "Your cart added Cart Section!",
+                icon: "success"
             });
         }
-        if (checkWishlist === true) {
+    }
+
+
+    // handle wishlist button 
+    const [isDisable, setIsDistable] = useState(false)
+    const handleAddToWishlist = (product) => {
+
+        const checkWishlist = wishlistItems.find(item => item.product_id === product.product_id)
+        const checkCart = cartItems.find(item => item.product_id === product.product_id)
+        if (checkWishlist) {
             return Swal.fire({
                 title: "Already added !",
                 text: "Already added this product to Wishlist section!",
                 icon: "warning"
             });
         }
-        addToWishlist(product)
+        else if (checkCart) {
+            if (checkCart) {
+                return Swal.fire({
+                    title: "You added to Cart",
+                    text: "Already added this product to Cart!",
+                    icon: "error"
+                });
+            }
+        }
+        else {
+            addToWishlist(product)
+        }
 
         Swal.fire({
             title: "Good job!",
             text: "Your cart added Wishlist Section!",
             icon: "success"
         });
+        setIsDistable(true)
     }
- 
+
 
     return (
         <div className="relative">
+            <Helmet>
+                <title>Product Details | Gadget-shop</title>
+            </Helmet>
 
             <div>
                 <UseBanner
@@ -100,6 +118,7 @@ const ProductsDetails = () => {
                                 />
                                 <p className="px-3 py-1 rounded-full bg-gray-200 ">{rating}</p>
                             </div>
+                            {/* button section  */}
                             <div className="flex gap-4 mt-4">
                                 <button
                                     onClick={() => handleAddToCart(findData)}
@@ -108,8 +127,9 @@ const ProductsDetails = () => {
                                     < PiShoppingCartThin></PiShoppingCartThin>
                                 </button>
                                 <button
+                                    disabled={isDisable}
                                     onClick={() => handleAddToWishlist(findData)}
-                                    className="p-4 shadow-lg border border-[#9538E2] rounded-full text-black flex items-center gap-3">
+                                    className={`p-4 shadow-lg border border-[#9538E2] rounded-full text-black flex items-center gap-3 ${isDisable ? 'border-gray-200 bg-gray-100' : ''}`}>
                                     <PiHeartStraightThin className="w-7 h-7"></PiHeartStraightThin>
                                 </button>
                             </div>
@@ -117,7 +137,7 @@ const ProductsDetails = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

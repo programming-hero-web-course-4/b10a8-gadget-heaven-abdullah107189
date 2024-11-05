@@ -10,12 +10,16 @@ import {
     Tooltip,
     Legend,
 } from 'recharts';
+import { Helmet } from "react-helmet-async";
 
 const Statistics = () => {
     const datas = useLoaderData()
 
     return (
         <div className="">
+            <Helmet>
+                <title>Statistics | Gadget-shop</title>
+            </Helmet>
             <UseBanner
                 title={"Statistics"}
                 btn={false}
