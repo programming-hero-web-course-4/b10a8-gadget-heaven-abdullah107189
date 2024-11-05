@@ -10,7 +10,6 @@ const Navbar = () => {
         setNowLocation(location.pathname)
     }, [location.pathname])
     const { cartItems, wishlistItems } = useContext(CartContext)
-    console.log(cartItems.length, wishlistItems.length);
     // nav bar category 
     const li =
         <div className="flex gap-10">

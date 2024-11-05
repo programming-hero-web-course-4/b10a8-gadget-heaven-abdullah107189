@@ -14,6 +14,8 @@ import AllProductsByCategory from './Components/AllProductsByCategory/AllProduct
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import ProductsDetails from './Pages/ProductsDetails/ProductsDetails';
 import { CartProvider } from './Provider/CartContext';
+import CartSection from './Components/CartSection/CartSection';
+import WishlistSection from './Components/WishlistSection/WishlistSection';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +53,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: 'cart-section',
+            element: <CartSection></CartSection>
+          },
+          {
+            path: 'wishlist-section',
+            element: <WishlistSection></WishlistSection>
+          }
+        ]
       },
       {
         path: '/productDetails/:id',
