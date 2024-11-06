@@ -16,7 +16,7 @@ const Statistics = () => {
     const datas = useLoaderData()
 
     return (
-        <div className="">
+        <div className="md:flex flex-col hidden">
             <Helmet>
                 <title>Statistics | Gadget-shop</title>
             </Helmet>

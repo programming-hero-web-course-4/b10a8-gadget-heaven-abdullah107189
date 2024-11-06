@@ -52,7 +52,7 @@
         "product_title": "Anker PowerPort Atom III Slim",
         "product_image": "https://i.postimg.cc/JhQx8trF/sg-11134207-7rbms-lnckmyfu8b0n4e-36de6cbf-5877-4f4a-aa0d-17c46cd5543c.webp",
         "category": "chargers",
-        "price": 35,
+        "price": 55,
         "description": "Ultra-slim USB-C charger with 30W power output, ideal for charging phones and tablets quickly.",
         "specification": [
             "30W USB-C Power Delivery",
@@ -67,7 +67,7 @@
         "product_title": "Anker PowerCore 20100",
         "product_image": "https://i.postimg.cc/zvyFTjCm/71-Of299-Q8n-L-AC-UF894-1000-QL80.jpg",
         "category": "power banks",
-        "price": 50,
+        "price": 59,
         "description": "High-capacity power bank with 20100mAh battery for charging devices multiple times.",
         "specification": [
             "20100mAh capacity",
@@ -130,7 +130,7 @@
         "product_title": "Apple 20W USB-C Power Adapter",
         "product_image": "https://i.postimg.cc/vTx54myb/s-l1200.jpg",
         "category": "chargers",
-        "price": 19,
+        "price": 59,
         "description": "Apple's official 20W USB-C charger for fast charging compatible iPhones and iPads.",
         "specification": [
             "20W USB-C Power Delivery",
@@ -208,7 +208,7 @@
         "product_title": "Anker Nano II 65W Charger",
         "product_image": "https://i.postimg.cc/sXqw6qDf/0574505-anker-nano-ii-30w-gan-ii-usb-c-fast-charger-adapter.jpg",
         "category": "chargers",
-        "price": 39,
+        "price": 65,
         "description": "Compact 65W charger with USB-C compatibility, ideal for charging laptops and smartphones.",
         "specification": [
             "65W USB-C Power Delivery",
@@ -216,22 +216,119 @@
             "Compact design"
         ],
         "availability": true,
+        "rating": 4.8
+    },      
+    {
+        "product_id": "119",
+        "product_title": "Sony WH-1000XM5",
+        "product_image": "https://i.postimg.cc/zf2LsV6c/sony-wh1000xm5.jpg",
+        "category": "headphones",
+        "price": 399,
+        "description": "Industry-leading noise-canceling headphones with 30-hour battery life and premium sound quality.",
+        "specification": [
+            "Active noise canceling",
+            "30 hours battery life",
+            "Bluetooth 5.2",
+            "Alexa built-in"
+        ],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "120",
+        "product_title": "Nintendo Switch OLED",
+        "product_image": "https://i.postimg.cc/HkBcWkDp/nintendo-switch-oled.jpg",
+        "category": "gaming consoles",
+        "price": 349,
+        "description": "Portable gaming console with vibrant OLED screen and extended battery life.",
+        "specification": [
+            "7-inch OLED display",
+            "64GB internal storage",
+            "Up to 9 hours battery life",
+            "Joy-Con controllers"
+        ],
+        "availability": true,
+        "rating": 4.8
+    },
+    {
+        "product_id": "121",
+        "product_title": "DJI Mavic Air 2",
+        "product_image": "https://i.postimg.cc/RZPVqD0g/dji-mavic-air-2.jpg",
+        "category": "drones",
+        "price": 799,
+        "description": "Compact drone with 4K video recording, obstacle avoidance, and 34 minutes of flight time.",
+        "specification": [
+            "4K camera",
+            "34 minutes flight time",
+            "3-axis gimbal",
+            "Intelligent shooting modes"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "122",
+        "product_title": "Canon EOS R6",
+        "product_image": "https://i.postimg.cc/65Cck4vK/canon-eos-r6.jpg",
+        "category": "cameras",
+        "price": 2499,
+        "description": "Mirrorless camera with advanced autofocus, 20MP sensor, and 4K video recording for professionals.",
+        "specification": [
+            "20MP full-frame sensor",
+            "4K 60fps video",
+            "Dual Pixel autofocus",
+            "5-axis in-body stabilization"
+        ],
+        "availability": true,
+        "rating": 4.9
+    },
+    {
+        "product_id": "123",
+        "product_title": "JBL Charge 5",
+        "product_image": "https://i.postimg.cc/3xkjMp0s/jbl-charge-5.jpg",
+        "category": "speakers",
+        "price": 179,
+        "description": "Portable Bluetooth speaker with long-lasting battery life and waterproof design.",
+        "specification": [
+            "20 hours battery life",
+            "IP67 waterproof rating",
+            "Bluetooth 5.1",
+            "Powerful bass"
+        ],
+        "availability": true,
+        "rating": 4.7
+    },
+    {
+        "product_id": "124",
+        "product_title": "Amazon Echo Dot (5th Gen)",
+        "product_image": "https://i.postimg.cc/02szCwTv/echo-dot-5th-gen.jpg",
+        "category": "smart home",
+        "price": 49,
+        "description": "Compact smart speaker with Alexa, ideal for hands-free control of smart home devices.",
+        "specification": [
+            "Alexa built-in",
+            "Improved audio",
+            "Compatible with smart home devices",
+            "Bluetooth connectivity"
+        ],
+        "availability": true,
         "rating": 4.6
     },
     {
-        "product_id": "115",
-        "product_title": "RAVPower 15000mAh Portable Charger",
-        "product_image": "https://i.postimg.cc/KjTQdfRP/15000m-Ah-PD-3-0-USB-C-PD-Power-Bank-Portable-Charger-30-W-Power-d298bcc3-9197-408d-8012-803e8629ddfa.webp",
-        "category": "power banks",
-        "price": 45,
-        "description": "Portable and lightweight power bank for reliable charging on the go.",
+        "product_id": "125",
+        "product_title": "Samsung Odyssey G9",
+        "product_image": "https://i.postimg.cc/j24Bdxk2/samsung-odyssey-g9.jpg",
+        "category": "monitors",
+        "price": 1199,
+        "description": "49-inch curved gaming monitor with dual QHD resolution and 240Hz refresh rate.",
         "specification": [
-            "15000mAh capacity",
-            "2 USB ports",
-            "LED battery indicator"
+            "49-inch dual QHD",
+            "240Hz refresh rate",
+            "HDR1000",
+            "1ms response time"
         ],
         "availability": true,
-        "rating": 4.4
+        "rating": 4.8
     },
     {
         "product_id": "201",
@@ -286,7 +383,7 @@
         "product_title": "Apple MagSafe Charger",
         "product_image": "https://i.postimg.cc/hjz0ds8k/Apple-Mag-Safe-Charger-2.jpg",
         "category": "accessories",
-        "price": 39,
+        "price": 59,
         "description": "MagSafe wireless charger for easy, fast charging compatible with iPhone models.",
         "specification": [
             "15W charging speed",
@@ -302,7 +399,7 @@
         "product_title": "Amazon Echo Dot (4th Gen)",
         "product_image": "https://i.postimg.cc/Qt2Jk70H/6430063cv12d-1.jpg",
         "category": "accessories",
-        "price": 49,
+        "price": 69,
         "description": "Smart speaker with Alexa, designed for hands-free control and smart home integration.",
         "specification": [
             "Voice control with Alexa",
@@ -312,5 +409,5 @@
         ],
         "availability": true,
         "rating": 4.7
-    }   
+    }
 ]

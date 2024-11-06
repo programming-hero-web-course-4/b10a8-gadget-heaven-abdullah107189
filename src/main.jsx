@@ -17,6 +17,7 @@ import { CartProvider } from './Provider/CartContext';
 import CartSection from './Components/CartSection/CartSection';
 import WishlistSection from './Components/WishlistSection/WishlistSection';
 import { HelmetProvider } from 'react-helmet-async';
+import AnotherPage from './Pages/AnotherPage/AnotherPage';
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
         path: '/productDetails/:id',
         element: <ProductsDetails></ProductsDetails>,
         loader: () => fetch('/products.json'),
+      },
+      {
+        path:'/complain-form',
+        element:<AnotherPage></AnotherPage>
       },
     ]
   },

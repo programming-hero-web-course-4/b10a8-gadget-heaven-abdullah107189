@@ -11,12 +11,6 @@ const Navbar = () => {
     }, [location.pathname])
     const { cartItems, wishlistItems } = useContext(CartContext)
     // nav bar category 
-    const li =
-        <div className="flex gap-10">
-            <NavLink className={({ isActive }) => isActive ? "active" : ""} to={'/'}>Home</NavLink>
-            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/statistics'}>Statistics</NavLink>
-            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/dashboard'}>Dashboard</NavLink>
-        </div>
     return (
         <div className={`${nowLocation === '/' ? '' : 'bg-white'} sticky top-0 z-30`}>
             {/* <div className="mt-5"> */}
@@ -39,21 +33,27 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            {li}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-32 p-3 space-y-2 shadow">
+                            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? 'text-black' : 'bg-white border-b !border-black'} active border-b !border-black` : "text-black"} to={'/'}>Home</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : "text-black"} to={'/statistics'}>Statistics</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : "text-black"} to={'/dashboard'}>Dashboard</NavLink>
+                            <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : "text-black"} to={'/complain-form'}>Complain Form</NavLink>
                         </ul>
                     </div>
-                    <a href="/" className="font-bold text-xl">Gadget Shop</a>
+                    <a href="/" className="font-bold md:text-xl">Gadget Shop</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {li}
+                    <ul className="menu menu-horizontal px-1 flex gap-10">
+                        <NavLink className={({ isActive }) => isActive ? "active" : ""} to={'/'}>Home</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/statistics'}>Statistics</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/dashboard'}>Dashboard</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${nowLocation === '/' ? '' : 'bg-white border-b !border-black'} active` : ""} to={'/complain-form'}>Complain Form</NavLink>
                     </ul>
                 </div>
                 <div className="navbar-end">
                     <div className="flex gap-4">
                         <Link
-                            to={ '/dashboard/cart-section'}
+                            to={'/dashboard/cart-section'}
                             className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiShoppingCartThin className="w-full h-full z-20"></PiShoppingCartThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white pink border' : 'border'} rounded-full`}>
@@ -61,7 +61,7 @@ const Navbar = () => {
                             </div>
                         </Link>
                         <Link
-                        to={ '/dashboard/wishlist-section'}
+                            to={'/dashboard/wishlist-section'}
                             className="relative w-10 h-10 p-2 px-2 bg-white border rounded-full  text-black ">
                             <PiHeartStraightThin className="w-full h-full"></PiHeartStraightThin>
                             <div className={`absolute -top-3 -right-1 ${nowLocation === '/' ? 'bg-white  pink border' : 'border'} rounded-full`}>

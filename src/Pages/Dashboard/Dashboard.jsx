@@ -83,9 +83,7 @@ const Dashboard = () => {
                     <div className="modal-action justify-center">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <div className="flex gap-10">
-                                <button onClick={() => redirectGoToHome()} className="pinkOutletBtn">Close</button>
-                            </div>
+                            <button onClick={() => redirectGoToHome()} className="pinkOutletBtn md:w-52">Close</button>
                         </form>
                     </div>
                 </div>
