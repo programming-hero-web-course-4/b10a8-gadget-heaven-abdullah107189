@@ -35,11 +35,11 @@ const SingleWishListCard = ({ items }) => {
         });
     }
     return (
-        <div className="p-5 shadow-lg mb-4 border rounded-xl flex gap-20">
-            <div className="w-[400px] h-[200px] shadow-md rounded-xl">
+        <div className="p-5 shadow-lg mb-4 border rounded-xl md:flex gap-20">
+            <div className="md:w-[400px] w-[300px] md:h-[200px] h-[150px] shadow-md rounded-xl md:mb-0 mb-5">
                 <img className="w-full h-full object-contain" src={product_image} alt={product_title} />
             </div>
-            <div className="flex justify-between w-full pr-10">
+            <div className="flex justify-between w-full md:pr-10">
                 <div className="space-y-3">
                     <h1 className="text-2xl font-bold">{product_title}</h1>
                     <p>{description}</p>

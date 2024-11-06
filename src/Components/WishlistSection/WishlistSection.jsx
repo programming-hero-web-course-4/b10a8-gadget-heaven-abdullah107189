@@ -8,7 +8,7 @@ const WishlistSection = () => {
     const { wishlistItems } = useContext(CartContext)
 
     return (
-        <div className="mt-5">
+        <div className="md:mt-5">
             <Helmet>
                 <title>Dashboard | Wishlist | Gadget-shop</title>
             </Helmet>

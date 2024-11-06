@@ -88,14 +88,14 @@ const ProductsDetails = () => {
                 ></UseBanner>
             </div>
             <button className="absolute pinkOutletBtn top-2 left-2" onClick={() => navigate(-1)}>Back</button>
-            <div className="bg-[#F7F7F7] px-20  rounded-b-3xl">
-                <div className=" flex items-center gap-10 bg-white rounded-2xl p-5 -top-[100px] relative shadow-lg">
-                    <div className="w-[450px] h-[500px] border rounded-2xl">
+            <div className="bg-[#F7F7F7] md:px-20 px-5  rounded-b-3xl">
+                <div className=" md:flex items-center gap-10 bg-white rounded-2xl p-5 md:-top-[100px] -top-[80px] relative shadow-lg">
+                    <div className="md:w-[450px] md:h-[500px] border rounded-2xl md:mb-0 mb-4">
                         <img className="w-full h-full object-contain" src={product_image} alt={product_title} />
                     </div>
                     <div className="space-y-3">
-                        <h1 className="text-3xl font-bold">{product_title}</h1>
-                        <p className="">Price : {price} $</p>
+                        <h1 className="text-xl font-bold">{product_title}</h1>
+                        <p className="font-bold ">Price : <span className="text-2xl font-bold">{price}</span> $</p>
                         <div className="flex">
                             <div className="border rounded-full border-green-400 text-green-400 px-3 py-1">
                                 {`${availability ? 'In Stock' : 'Out of Stoke'}`}

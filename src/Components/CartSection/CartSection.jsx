@@ -9,7 +9,7 @@ const CartSection = () => {
     const length = cartItems.length
 
     return (
-        <div className="my-5 mb-10">
+        <div className="md:my-5 md:mb-10">
             <Helmet>
                 <title>Dashboard | CartItems | Gadget-shop</title>
             </Helmet>

@@ -16,10 +16,10 @@ function AnotherPage() {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center p-10 bg-gray-100 rounded-2xl">
-            <div className="w-full bgPink py-12 mb-8 shadow-lg rounded-xl">
+        <div className="flex flex-col justify-center items-center md:p-10 p-5 bg-gray-100 rounded-2xl">
+            <div className="w-full bgPink md:py-12 py-5 md:mb-8 mb-5 shadow-lg rounded-xl">
                 <div className="container mx-auto text-center">
-                    <h1 className="text-5xl font-bold text-white mb-2">Submit Your Complaint</h1>
+                    <h1 className="md:text-5xl text-3xl font-bold text-white mb-2">Submit Your Complaint</h1>
                     <p className="text-lg text-blue-100">
                         We are here to help! Please provide the details below.
                     </p>

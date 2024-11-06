@@ -35,7 +35,7 @@ const Dashboard = () => {
         navigate('/', { replace: true });
     }
     return (
-        <div>
+        <div className="">
             <Helmet>
                 <title>Dashboard | Gadget-shop</title>
             </Helmet>
@@ -44,28 +44,32 @@ const Dashboard = () => {
             ></UseBanner>
             {
                 isCart ?
-                    <div className="flex justify-between items-center mt-4" >
+                    <div className="flex gap-2 justify-between items-center mt-4 md:p-0 p-2" >
                         <h1 className="text-3xl font-bold">Cart</h1>
-                        <div className="flex gap-4 items-center">
-                            <h1 className="text-3xl font-bold">Total cost : {result}</h1>
-                            <button
-                                onClick={() => handleSortByPrice()}
-                                className="pinkOutletBtn flex gap-2">Sort by Price <RiEqualizerLine className="rotate-90 text-[#9538E2] w-7 h-7" />
-                            </button>
-                            <button
-                                onClick={() => handlePurchase()}
-                                className="!bgPink !text-white pinkOutletBtn  flex gap-2">
-                                Purchase
-                            </button>
+                        <div className="md:flex md:space-y-0 space-y-3 md:gap-4 items-center">
+                            <h1 className="md:text-3xl text-center text-xl font-bold">Total cost : {result}</h1>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => handleSortByPrice()}
+                                    className="pinkOutletBtn flex gap-2 items-center">Sort by Price <RiEqualizerLine className="rotate-90 text-[#9538E2] w-7 h-7" />
+                                </button>
+                                <button
+                                    onClick={() => handlePurchase()}
+                                    className="!bgPink !text-white pinkOutletBtn  flex gap-2">
+                                    Purchase
+                                </button>
+                            </div>
                         </div>
                     </div>
                     :
-                    <div className="flex justify-between items-center mt-4">
+                    <div className="flex justify-between items-center mt-4 md:p-0 p-4">
                         <h1 className="text-3xl font-bold">Wishlist</h1>
                     </div>
             }
 
-            <Outlet></Outlet>
+            <div className="md:p-0 p-4">
+                <Outlet></Outlet>
+            </div>
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <dialog id="my_modal_1" className="modal">
                 <div className="modal-box flex flex-col items-center text-center">

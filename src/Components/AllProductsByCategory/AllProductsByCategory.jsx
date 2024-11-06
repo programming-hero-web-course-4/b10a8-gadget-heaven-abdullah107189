@@ -17,7 +17,7 @@ const AllProductsByCategory = () => {
     }, [loadAllProducts, category])
     return (
         <div>
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid  md:grid-cols-3 gap-3">
                 {
                     allData.map(items => <SingleProductCard
                         key={items.product_id}

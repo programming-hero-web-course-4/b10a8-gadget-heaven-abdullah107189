@@ -1,14 +1,14 @@
 const Footer = () => {
     return (
-        <div className="max-w-[1440px] mx-auto pb-6  mt-20">
+        <div className="max-w-[1440px] mx-auto pb-6  mt-20 ">
             <div className="text-center">
                 <h1 className="text-3xl font-bold mb-2">Gadget Heaven</h1>
-                <p>Leading the way in cutting-edge technology and innovation.</p>
+                <p className="md:w-full w-4/5 mx-auto">Leading the way in cutting-edge technology and innovation.</p>
             </div>
             <div className="py-5">
-                <hr /> 
+                <hr />
             </div>
-            <div className="text-center flex justify-around mt-5">
+            <div className="text-center md:flex md:space-y-0 space-y-10 justify-around mt-5">
                 <ul className="space-y-2">
                     <p className="mb-2 font-bold">Services</p>
                     <li><a href="#" className="hover:pink">Product Support</a></li>
